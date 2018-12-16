@@ -1,17 +1,19 @@
 package sorting
 
+import scala.util.Random
+
 object QuickSort extends App {
-  val list: List[Double] = List.fill(5)(math.random())
+  val list: List[Int] = List.fill(5)(Random.nextInt(20))
 println(list)
   println(qsort(list))
 
-  def qsort(list: List[Double]): List[Double] = {
+  def qsort(list: List[Int]): List[Int] = {
     list match {
       case Nil => list
       case _:: Nil => list
       case pivot :: tail => {
         val (less, greater) = tail.partition(_ < pivot)
-        qsort(less) ::: (pivot :: greater)
+        qsort(less) ::: (pivot :: qsort(greater))
       }
     }
   }

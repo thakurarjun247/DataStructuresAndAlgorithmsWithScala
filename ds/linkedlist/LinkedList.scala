@@ -1,4 +1,4 @@
-package ds.binarytree
+package ds.linkedlist
 
 import scala.io.StdIn.readInt
 
