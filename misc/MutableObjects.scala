@@ -1,3 +1,5 @@
+package misc
+
 object MutableObjects extends App {
   /*
   *

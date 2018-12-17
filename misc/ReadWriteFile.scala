@@ -1,7 +1,9 @@
+package misc
+
 object ReadWriteFile extends App {
+  import java.io.{File, PrintWriter}
+
   import scala.io.Source
-  import java.io.File
-  import java.io.PrintWriter
 
   /*
   * Scala standard library doesn’t contain any classes to write files,

@@ -1,5 +1,5 @@
 package misc
-
+//
 class X
 
 class Y
