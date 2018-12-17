@@ -9,7 +9,7 @@ object BinarySearchTree extends App {
   def insert(root: Node, key: Int): Node = {
     if (root == null) return new Node(key)
     else {
-      if (key < root.key) root.left = insert(root.left, key)
+      if (key <= root.key) root.left = insert(root.left, key)
       else root.right = insert(root.right, key)
     }
     root
