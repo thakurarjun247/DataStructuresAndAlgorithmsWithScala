@@ -6,8 +6,14 @@ import scala.collection.mutable.ListBuffer
 object Sets extends App {
   val dupNums=List(0,1,2,3,3,3)
   println(dupNums)
-  dupNums
+
+  //create a map (item=>List(item, item))
+  val groupedByItem=dupNums
     .groupBy(item=>item)
+
+  groupedByItem.foreach(println)
+
+     groupedByItem
     .foreach(tuple=>println(s"${tuple._1} -> ${tuple._2.size}"))
 
   val numSet = mutable.Set.empty[Int]
