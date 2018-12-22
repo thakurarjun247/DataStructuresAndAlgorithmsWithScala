@@ -1,7 +1,4 @@
-package sorting
-
-import scala.util.Random
-
+package misc
 
 object HighLowAlternating { // Utility function to swap two elements A[i] and A[j] in the array
   private def swap(A: Array[Int], i: Int, j: Int): Unit = {

@@ -1,6 +1,4 @@
-package sorting
-
-import sorting.SearchRotatedArray.isPOR
+package misc
 
 object SearchRotatedArray extends App {
   println(search(Array(7, 8, 9, 0, 1, 2, 3, 4), 8).getOrElse("not found"))
