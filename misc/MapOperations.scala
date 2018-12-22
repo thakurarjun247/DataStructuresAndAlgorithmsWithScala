@@ -1,5 +1,6 @@
-package test
-import scala.collection.immutable.{ListMap, TreeMap}
+package misc
+
+import scala.collection.immutable.ListMap
 object Two
   extends App {
   val list=Array("Alice",
