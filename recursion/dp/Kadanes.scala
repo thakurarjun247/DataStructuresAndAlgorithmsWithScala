@@ -2,11 +2,10 @@ package recursion.dp
 
 object  Kadanes extends App {
   print("expected 7 actual is ")
-println(kadanes(Array(-2, -3, 4, -1, -2, 1, 5, -3)))
+println(maxSumInNonContinuousSubarray(Array(-2, -3, 4, -1, -2, 1, 5, -3)))
   /*
-  *  find the sum of contiguous subarray within an array
-  *  of numbers which has the largest sum.  */
-  def kadanes(a:Array[Int]): Int={
+  Just sums the positive numbers, worthless  */
+  def maxSumInNonContinuousSubarray(a:Array[Int]): Int={
     if(a.length==0) return 0
     var sum=a(0)
     var tempSum=a(0)
