@@ -1,23 +1,31 @@
 package misc
-//
-class X
 
-class Y
+class W {
+  override def toString = "W"
+}
 
-class Z
+class X {
+  override def toString = "X"
+}
+
+class Y extends X{
+  override def toString = "Y"
+}
+
 
 object Bounds extends App {
-  val a = new X
-  val b = new Y
-  val c = new Z
+  val w = new W
+  val x = new X
+  val y = new Y
 
-  def upper[T <: Y](t: T) = println(t)
+class MyClass[T <: Y] {
+  def tAndSubTypes(t: T) = println(t)
+}
+/*
+  val myClass=new MyClass[X]()
+  myClass.tAndSubTypes(x)
+  myClass.tAndSubTypes(y)*/
+  //myClass.tAndSubTypes(w)
 
-  def lower[T >: Y](t: T) = println(t)
 
-  //upper(a)
-  //upper(a)
-  // upper(c)
-  lower(a)
-  lower(c)
 }
