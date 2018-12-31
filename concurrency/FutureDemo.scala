@@ -1,6 +1,5 @@
-package misc
+package concurrency
 import scala.concurrent.ExecutionContext.Implicits.global
-
 import scala.concurrent.Future
 
 object FutureDemo extends App{

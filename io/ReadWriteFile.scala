@@ -1,4 +1,4 @@
-package misc
+package io
 
 object ReadWriteFile extends App {
   import java.io.{File, PrintWriter}
