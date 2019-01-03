@@ -5,9 +5,6 @@ object FoldLeftReduce extends App{
 //adding all list elements
 
   val list = List(1,1,2,3,4, 3)
-
-
-
   println(list:+5)
   println(5::list)
   var total:Int = 0
