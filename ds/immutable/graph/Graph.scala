@@ -1,4 +1,4 @@
-package ds.graph
+package ds.immutable.graph
 
 trait Graph[V] {
   def vertices : List[V]

@@ -13,7 +13,8 @@ object Map2 extends App {
   println("a tuple can have any number of elements")
   val tuple = (0, 1, 2)
   println(s"printing tuple.. (${tuple._1} , ${tuple._2}, ${tuple._3})")
-
+  val wordsTuple=List("one","two")
+  wordsTuple.map(_.toList)
   //foreach case
   m1 foreach { case (k, v) => println(s"  $k -> $v") }
 

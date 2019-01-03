@@ -1,4 +1,4 @@
-package ds.queue
+package ds.mutable.queue
 
 object QueueApp extends App{
   val q=new Queue[String]

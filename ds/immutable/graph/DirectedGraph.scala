@@ -1,4 +1,4 @@
-package ds.graph
+package ds.immutable.graph
 
 class DirectedGraph[V](adjList: Map[V,List[V]]) extends Graph[V] {
   override def vertices: List[V] = adjList.keys.toList

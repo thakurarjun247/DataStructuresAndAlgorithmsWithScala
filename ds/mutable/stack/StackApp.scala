@@ -1,4 +1,4 @@
-package ds.stack
+package ds.mutable.stack
 
 object StackApp extends App{
 val stack=new Stack[Int]

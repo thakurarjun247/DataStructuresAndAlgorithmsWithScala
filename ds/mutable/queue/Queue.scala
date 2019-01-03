@@ -1,4 +1,4 @@
-package ds.queue
+package ds.mutable.queue
 
 class Queue[T] extends AbstractQueue[T] {
 

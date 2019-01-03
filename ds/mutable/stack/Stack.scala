@@ -1,4 +1,4 @@
-package ds.stack
+package ds.mutable.stack
 
 class Stack[T] extends AbstractStack[T] {
   private case class Node(key: T, next: Node)

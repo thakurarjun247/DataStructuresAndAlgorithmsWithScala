@@ -4,7 +4,7 @@ class W {
   override def toString = "W"
 }
 
-class X {
+class X extends W{
   override def toString = "X"
 }
 
@@ -18,14 +18,26 @@ object Bounds extends App {
   val x = new X
   val y = new Y
 
-class MyClass[T <: Y] {
+class MyClass[T <: X] {
   def tAndSubTypes(t: T) = println(t)
 }
-/*
+
   val myClass=new MyClass[X]()
   myClass.tAndSubTypes(x)
-  myClass.tAndSubTypes(y)*/
+  myClass.tAndSubTypes(y)
   //myClass.tAndSubTypes(w)
+
+  class AnotherClass[A>:X]{
+    def tAndSuperTypes(t:A)=println(t)
+  }
+
+  val cx=new AnotherClass[X]
+  //runtime error below
+  //val cy=new AnotherClass[Y]
+  val cw=new AnotherClass[W]
+/*  anotherClass.tAndSuperTypes(w)
+  anotherClass.tAndSuperTypes(x)
+  anotherClass.tAndSuperTypes(y)*/
 
 
 }

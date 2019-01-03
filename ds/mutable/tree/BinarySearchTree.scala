@@ -1,4 +1,4 @@
-package ds.tree
+package ds.mutable.tree
 
 import scala.collection.mutable
 import scala.io.StdIn._
@@ -131,7 +131,7 @@ object BinarySearchTree extends App {
   def printLevelByLevel(root: Node) = {
     val buffer = mutable.ListBuffer[Node]()
     if (root != null) {
-      val q = new mutable.Queue[Node]()
+      val q =  mutable.Queue[Node]()
       q.enqueue(root)
       while (q.size != 0) {
         val node = q.dequeue()

@@ -1,4 +1,4 @@
-package ds.queue
+package ds.mutable.queue
 
 trait AbstractQueue[T] {
   def dequeue: T

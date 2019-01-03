@@ -1,4 +1,4 @@
-package ds.graph
+package ds.immutable.graph
 
 class UndirectedGraph[V](adjList: Map[V,List[V]]) extends DirectedGraph[V](adjList) {
 override def addEdge(a: V, b: V): Graph[V] = {

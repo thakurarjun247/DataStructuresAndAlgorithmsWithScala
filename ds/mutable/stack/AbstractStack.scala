@@ -1,4 +1,4 @@
-package ds.stack
+package ds.mutable.stack
 
 trait AbstractStack[T]{
   def pop : T

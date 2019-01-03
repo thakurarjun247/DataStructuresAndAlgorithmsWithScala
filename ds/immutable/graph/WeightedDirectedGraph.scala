@@ -1,4 +1,4 @@
-package ds.graph
+package ds.immutable.graph
 
 case class WeigthedEdge[V](destination: V, weight: Int)
 

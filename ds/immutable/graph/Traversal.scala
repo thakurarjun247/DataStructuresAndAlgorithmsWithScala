@@ -1,4 +1,4 @@
-package ds.graph
+package ds.immutable.graph
 import scala.collection.immutable.Queue
 import scala.collection.mutable
 object Traversal extends App{

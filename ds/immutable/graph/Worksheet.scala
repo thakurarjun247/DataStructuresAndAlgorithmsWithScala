@@ -1,4 +1,4 @@
-package ds.graph
+package ds.immutable.graph
 
 object Worksheet extends App{
   val graph=new DirectedGraph[Int](Map(
