@@ -27,9 +27,9 @@ object Map1 extends App{
   // it is same as
   println(map(1))
 
-  //getOrElse(k,d) return Some(v) or default value d
+  //getOrElse(k,d) return value (not wrapped in Some()) or default value d
   println(map getOrElse(10,"not present"))
-
+  println(map getOrElse(1,"not present"))
   //headsup: exception
   //println(map apply 3)
 
@@ -64,6 +64,9 @@ object Map1 extends App{
   println("map7: "+map7)
   //can remove multiple keys
   val map8=map5-(1,2,3)
+  //tuple can be added subtracted with a single - For adding removing
+  //on collection use -- double minus
+  val map99=map7--map5.keys
 
   //-- subtract one map from other
 

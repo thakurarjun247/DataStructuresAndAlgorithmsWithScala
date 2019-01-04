@@ -18,5 +18,7 @@ object Stack extends App {
   println(stack.head)
   println(stack.top)
   stack.pushAll(List(2, 3))
+  //can check it with
+  stack.isEmpty
 
 }

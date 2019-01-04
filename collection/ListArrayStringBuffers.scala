@@ -8,9 +8,9 @@ object ListArrayStringBuffers extends App{
         val string="123"
         val list=List(1,2,3)
         val array=Array(1,2,3)
-        val arrayBuffer=new ArrayBuffer[Int]()
+        val arrayBuffer= ArrayBuffer[Int]()
         val arrayBuffer1:ArrayBuffer[Int]=ArrayBuffer(1,2,3)
-        val listBuffer=new ListBuffer[Int]()
+        val listBuffer= ListBuffer[Int]()
         val listBuffer1=ListBuffer(1,2,3)
 
         //size and length both are supported by all of them

@@ -3,30 +3,31 @@ package covariancecontravariance
 object CovarianceDemo extends App {
 
   trait TodoList[+A]
-
-  class W
-
-  class X extends W
-
-  class Y extends X
-
   class ConcreteTodoList[M] extends TodoList[M]
 
+  class W
+  class X extends W
+  class Y extends X
+  
   val wList = new ConcreteTodoList[W]
   val xList = new ConcreteTodoList[X]
   val yList = new ConcreteTodoList[Y]
+
+  //if Y is subtype of X then
+  //by definition
+  //ConcreteTodoList[Y] is subtype of ConcreteTodoList[X]
 
   def f(list: TodoList[X]) = println("works")
 
   f(xList)
   f(yList)
+  f(wList)
   //below won't compile since f only takes
   //ToDoList of type X or TodoList of subtype of X i.e. Y
-  //f(wList)
 
   /*
   If we make the trait def contravariant as below
-  trait TodoList[+A]
+  trait TodoList[-A]
   then
   f(xList)
   f(zList)
