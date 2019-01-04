@@ -19,25 +19,20 @@ object Bounds extends App {
   val y = new Y
 
 class MyClass[T <: X] {
-  def tAndSubTypes(t: T) = println(t)
+  def acceptXAndSubTypes(t: T) = println(t)
 }
 
   val myClass=new MyClass[X]()
-  myClass.tAndSubTypes(x)
-  myClass.tAndSubTypes(y)
+  myClass.acceptXAndSubTypes(x)
+  myClass.acceptXAndSubTypes(y)
   //myClass.tAndSubTypes(w)
 
   class AnotherClass[A>:X]{
-    def tAndSuperTypes(t:A)=println(t)
+    def acceptXAndSuperTypes(t:A)=println(t)
   }
 
   val cx=new AnotherClass[X]
-  //runtime error below
-  //val cy=new AnotherClass[Y]
   val cw=new AnotherClass[W]
-/*  anotherClass.tAndSuperTypes(w)
-  anotherClass.tAndSuperTypes(x)
-  anotherClass.tAndSuperTypes(y)*/
-
-
+  //runtime error below
+ // val cy=new AnotherClass[Y]
 }

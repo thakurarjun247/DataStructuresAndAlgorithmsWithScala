@@ -29,15 +29,21 @@ object BinarySearchTree extends App {
   inorder(root)
   levelOrder(root)
   bottomView(root)
+  bottomViewWithManualSorting(root)
   topView(root)
 
 
   def insert(root: Node, key: Int): Node = {
     if (root == null) return new Node(key)
+      //can't be rewritten as
+    //if (root == null) root=new Node(key)
+      //reassign to val root
     else {
+      //need to set to left so that tree expands in left and right.
       if (key <= root.key) root.left = insert(root.left, key)
       else root.right = insert(root.right, key)
     }
+    //need to return root here so that caller always have the same/original root
     root
   }
 
@@ -99,6 +105,37 @@ object BinarySearchTree extends App {
       .foreach(pair => print(s" ${pair._2}"))
 
   }
+  def bottomViewWithManualSorting(root: Node) = {
+    println("\nBottom view with manual sorting..")
+    //keep them unordered, we dont use treemap here instead sort in the
+    //end, more efficient as we don't need the ordering overhead during
+    //the whole process
+    val map = mutable.Map[Int, Int]()
+    if (root != null) {
+      val q = new mutable.Queue[Node]()
+      q.enqueue(root)
+      while (q.size != 0) {
+        var hd = 0
+        val node = q.dequeue()
+        //notice: the only diff b/n top and bottom view is to replace or not replae map entries
+        map += (node.hd -> node.key)
+        if (node.left != null) {
+          node.left.hd = node.hd - 1
+          q.enqueue(node.left)
+        }
+        if (node.right != null) {
+          node.right.hd = node.hd + 1
+          q.enqueue(node.right)
+        }
+      }
+    }
+    map
+      .toList
+      //sort here
+      .sortWith(_._1 < _._1)
+      .foreach(pair => print(s" ${pair._2}"))
+  }
+
 
   def topView(root: Node) = {
     println("\nTop view..")
