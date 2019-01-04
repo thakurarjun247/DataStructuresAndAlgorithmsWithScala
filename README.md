@@ -1,2 +1,2 @@
 # scala
- Includes all types of programs starting from very basic "hello world" type of programs and goes all the way to advanced data structures and algoriths implemented in functional style.
+ Includes implementation of standard data structures and algorithms in Scala (functional style). Also includes example programs on basic as well as advanced topics on Scala langugage features (both functional and object oriented). 
