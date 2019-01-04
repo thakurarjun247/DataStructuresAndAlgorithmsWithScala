@@ -1,4 +1,4 @@
-package oo
+package oodesign.buildingblocks
 /*
  “Lazy Evaluation is an evaluation strategy which delays the evaluation
  of an expression until its value is needed.” And today most of the

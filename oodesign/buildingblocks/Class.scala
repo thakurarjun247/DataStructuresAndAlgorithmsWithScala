@@ -1,4 +1,4 @@
-package oo
+package oodesign.buildingblocks
 class BareMinimum
 
 class Point(var x:Int, var y:Int){

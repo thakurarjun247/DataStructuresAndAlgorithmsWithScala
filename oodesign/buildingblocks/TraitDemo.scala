@@ -1,4 +1,4 @@
-package oo
+package oodesign.buildingblocks
 trait Drivable{
   def drive:String
   def controlledBy:String="Drivable: controlledBy"

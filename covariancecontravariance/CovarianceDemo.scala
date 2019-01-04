@@ -8,7 +8,7 @@ object CovarianceDemo extends App {
   class W
   class X extends W
   class Y extends X
-  
+
   val wList = new ConcreteTodoList[W]
   val xList = new ConcreteTodoList[X]
   val yList = new ConcreteTodoList[Y]
@@ -21,7 +21,7 @@ object CovarianceDemo extends App {
 
   f(xList)
   f(yList)
-  f(wList)
+ // f(wList)
   //below won't compile since f only takes
   //ToDoList of type X or TodoList of subtype of X i.e. Y
 

@@ -1,4 +1,4 @@
-package design.patterns
+package oodesign.patterns
 
 trait Animal {
   def speak: String

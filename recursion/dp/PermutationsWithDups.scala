@@ -4,6 +4,7 @@ import scala.collection.mutable.ListBuffer
 
 object PermutationsWithDups extends App {
   //println( permutation("ab"))
+  "".head
   val buffer = new ListBuffer[String]()
 /*
   def insertAtAllPositions(s: String, c: Char): List[String] = {

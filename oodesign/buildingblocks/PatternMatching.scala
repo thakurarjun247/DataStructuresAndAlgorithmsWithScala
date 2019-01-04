@@ -1,4 +1,4 @@
-package design.buildingblocks
+package oodesign.buildingblocks
 
 object PatternMatching extends App{
         val list=List(1,2,3,4)

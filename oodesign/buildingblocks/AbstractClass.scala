@@ -1,4 +1,4 @@
-package design.buildingblocks
+package oodesign.buildingblocks
 
 abstract class Base {
   def foo = 1

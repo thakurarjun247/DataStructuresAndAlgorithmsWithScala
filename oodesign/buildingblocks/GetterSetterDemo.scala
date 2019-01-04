@@ -1,4 +1,4 @@
-package design.buildingblocks
+package oodesign.buildingblocks
 class BankAccount{
   private var balance:Int=0 //intialize
   //by default the var above will be public so make it private
