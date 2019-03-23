@@ -7,6 +7,8 @@ object SetDemo extends App{
         println(s"immutable set : $set")
 
         var mutableset=scala.collection.mutable.Set(1,2,3,4,5)
-        mutableset+6
+        //following won't work
+        //mutableset+6
+        mutableset+=7
         println(s"mutable set: $mutableset")
         }

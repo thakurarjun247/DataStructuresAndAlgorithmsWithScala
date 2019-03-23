@@ -20,12 +20,4 @@ val list=List(1,2,3,4)
   val map = Map(1 -> "one", 2 -> "two", 3 -> "three")
   val upMap=for((k,v)<-map) yield (k,v.toUpperCase())
  val listOfKeys=for((k,v)<-map) yield k
-  println()
-  println()
-  println()
-  println()
-  println()
-  println()
-  println()
-  println()
-}
+ }

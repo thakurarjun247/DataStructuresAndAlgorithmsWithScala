@@ -6,6 +6,8 @@ object MutableToFromImmutable extends App{
   val mut:mutable.Set[Int]=mutable.Set[Int]() ++ immmut
   mut+=4
   println(mut)
+  mut.toSet
+  //or
   val newImmut:Set[Int]=Set()++mut
 
 }

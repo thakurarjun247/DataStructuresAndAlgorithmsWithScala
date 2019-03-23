@@ -8,18 +8,14 @@ object String extends App{
   println(wordsArray.foreach(println))
   val s="01234"
   println(s"${s.head} ${s.tail} ${s(3)}")
-  //split at gives tuple
+  //split at gives tuple, with index 0 and 1 on first and remaining in
+  //second element of tuple
   val (x,y)=s.splitAt(2)
+  println("splitting.... \n"+"0123".splitAt(2)._1)
   println(s"$x $y")
 
 s.toCharArray foreach println
   val a=s.toList.toArray
   print(a)
   println()
-  println("even array has head and tail "+s"head is ${a.head} and tail is:")
-  val aHead:Char=a.head
-  val aTail:Array[Char]=a.tail
-  aTail foreach(print)
-
-
 }

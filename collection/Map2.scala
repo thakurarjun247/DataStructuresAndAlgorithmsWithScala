@@ -2,7 +2,8 @@ package collection
 
 object Map2 extends App {
   val m1 = Map("name" -> "Arjun", "surname" -> "Thakur")
-
+//m1.foreach(pair=>println(${pair._1}->${pair._2}))
+  //m1.map(pair =>pair._1+"appended"->)
   //traditional way, looks ugly as there is for loop
   for ((k, v) <- m1) println(s"  $k -> $v")
 
@@ -77,6 +78,12 @@ object Map2 extends App {
     .toList
     .groupBy(l => l) //groupby elements themselves creates list
     .map(t => (t._1, t._2.length))
+  val counterTuple: Map[String, Int] = s
+    .split(" ")
+    .toList
+    .groupBy(l => l) //groupby elements themselves creates list
+    .map(t => (t._1 -> t._2.length))
   println(counter)
+  println(counterTuple)
 
 }

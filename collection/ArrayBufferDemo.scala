@@ -6,6 +6,7 @@ object ArrayBufferDemo extends App {
   //new Array will be created for holding elements
   //can add/remove elements
   val buf= ArrayBuffer[Int]()
+  //add 1 to buffer
   buf+=1
   //replace 1 from index 0
   buf(0)=0

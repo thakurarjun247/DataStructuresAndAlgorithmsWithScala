@@ -1,4 +1,4 @@
-package sorting
+package algorithms.devideandconquer
 object InsertionSort extends App {
   val a = Array(5, 2, 4, 6, 1, 3)
   inSort(a).foreach(print)
@@ -15,4 +15,3 @@ object InsertionSort extends App {
     a
   }
 }
-//D:\AllScala\src\sorting

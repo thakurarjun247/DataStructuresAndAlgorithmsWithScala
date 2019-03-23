@@ -22,7 +22,7 @@ val seq=Seq.fill(10)(Random.nextInt(5))
 
   val unsortedMap=Map("01" -> List(34,12,14,23), "11" -> List(22,11,34), "00"->List(10, 9, 8))
 
-
+println(TreeMap[String, List[Int]]()++unsortedMap)
   println("sort based on key"+
     unsortedMap
     .toSeq

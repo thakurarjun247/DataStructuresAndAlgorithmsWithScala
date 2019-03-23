@@ -10,7 +10,7 @@ object ArrayDemo extends App {
     .foreach(print)
 
   val a = Array(1, 2, 3)
-  //val arr=new Array[Int]()
+  val arrayWithoutSize= Array[Int]()
 
   //print all
   a.foreach(println)

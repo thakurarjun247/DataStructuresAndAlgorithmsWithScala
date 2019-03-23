@@ -8,7 +8,7 @@ class Point(var x:Int, var y:Int){
   }
   override def toString=s"($x, $y)"
 }
-
+//if val or var isn't mentioned explicitly, by default it will be deemed val
 class PointWithDefaults(var x:Int=0, var y:Int=0){
   def move2(dx: Int, dy: Int): Unit = {
     x = x + dx

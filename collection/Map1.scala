@@ -5,6 +5,11 @@ object Map1 extends App{
   //only while creating buffers (arraybuf and listbuf) we need to use new keyword
   //other than that there is no use of new keyword in collections/maps/sets/list
   // be it mutable or immutable
+  val ab= scala.collection.mutable.ListBuffer[Int]()
+  ab+=1
+  ab+=0
+  ab.foreach(println)
+
 
   val mutMap=scala
     .collection

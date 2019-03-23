@@ -7,7 +7,10 @@ abstract class Base {
 
   var x: Int
 }
+//the val and var are evaluated when defined,
+//while def is evaluated on call.
 
+//https://alvinalexander.com/scala/fp-book-diffs-val-def-scala-functions
 class Sub extends Base {
   override def foo = 11
 
