@@ -1,4 +1,4 @@
-package Monads
+package functionalfeatures.Monads
 
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global

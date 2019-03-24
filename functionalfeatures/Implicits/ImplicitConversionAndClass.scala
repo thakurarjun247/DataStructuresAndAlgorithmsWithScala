@@ -1,11 +1,13 @@
-package Implicits
+package functionalfeatures.Implicits
 
 object ImplicitConversion extends App {
   val x = 0
 
   implicit class Printable(x: Int) {
     def printme = println(x)
+
   }
+
 
   //the above code translates to the following
   /*

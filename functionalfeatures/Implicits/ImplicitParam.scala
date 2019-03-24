@@ -1,4 +1,5 @@
-package Implicits
+package functionalfeatures.Implicits
+
 abstract class Monoid[A] {
   //TODO: do we need to mention return type
   def add(a: A, b: A): A

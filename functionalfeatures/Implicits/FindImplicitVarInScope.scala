@@ -1,4 +1,4 @@
-package Implicits
+package functionalfeatures.Implicits
 
 object FindImplicitVarInScope extends App {
 

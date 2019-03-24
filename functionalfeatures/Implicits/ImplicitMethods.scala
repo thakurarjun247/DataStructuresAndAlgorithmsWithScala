@@ -1,4 +1,4 @@
-package Implicits
+package functionalfeatures.Implicits
 
 object ImplicitMethods extends App{
   case class A(x:Int)

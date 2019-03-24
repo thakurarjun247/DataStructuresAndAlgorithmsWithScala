@@ -1,4 +1,5 @@
-package functional.features
+package functionalfeatures
+
 object CurryingDemo extends App
 {
   println(add(1,2))

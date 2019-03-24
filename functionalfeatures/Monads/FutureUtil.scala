@@ -1,4 +1,4 @@
-package Monads
+package functionalfeatures.Monads
 
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -7,6 +7,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 object FutureUtil {
   implicit val futureMonad = new Monad[Future] {
 
+    //a method that takes  Future[A] and a mapper aToB and returns Future[B]
     def map[A, B](value: Future[A])(f: (A) => B) = value.map(f)
 
 

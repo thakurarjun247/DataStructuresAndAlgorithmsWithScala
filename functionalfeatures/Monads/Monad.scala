@@ -1,5 +1,4 @@
-package Monads
-
+package functionalfeatures.Monads
 
 trait Monad[T[_]] {
 

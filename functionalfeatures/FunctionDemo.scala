@@ -1,4 +1,4 @@
-package functional.features
+package functionalfeatures
 
 object FunctionDemo extends App{
         val sum=(a:Int,b:Int,c:Int)=>a+b+c

@@ -1,15 +1,10 @@
-package scala.way
+package functionalfeatures
 
+import scala.util.Random
 object FoldLeftReduce extends App{
   //https://oldfashionedsoftware.com/2009/07/30/lots-and-lots-of-foldleft-examples/
 //adding all list elements
-
-  val list = List(1,1,2,3,4, 3)
-  println(list:+5)
-  println(5::list)
-  var total:Int = 0
-  list.foreach { item=> total=total+item }
-
+  val list = 0 to 5 toList
   val totalFun=list.foldLeft(0)(_+_)
   //syntax (identity i.e. initial value) (placeholder operator placeholder)
 
@@ -18,6 +13,7 @@ object FoldLeftReduce extends App{
   //one less thing to worry about
   //val totalIdentity=list.foldLeft(identity[Integer])(_+_)
   val totalFun2=list.foldLeft(0)((left,right)=>left+right)
+  //val counter=list.foldLeft(0)((left,right)=>left+right)
  // val count=list.foldLeft(0){(cnt,0)=>cnt+1)}
   println(s"$totalFun $totalFun2")
 case class Foo(val name: String, val age: Int, val sex: Symbol)
@@ -53,6 +49,7 @@ case class Foo(val name: String, val age: Int, val sex: Symbol)
   println(tNA)
   println(s"totalFun $totalFun reduce $totalFunReduce listsum $totalSumFun")
   println(s"count is"+list.foldLeft(0)((count,b)=>count+1))
+  println(s"sum is"+list.foldLeft(0)((sum,currentItem)=>sum+currentItem))
   println("last of list items "+
     list
       .foldLeft(list.head){(prev, curr)=>{
@@ -71,15 +68,11 @@ case class Foo(val name: String, val age: Int, val sex: Symbol)
   println(s"max in array ${list.toArray.max}")
 
   //create a map out of a list with key as list item and value as frequency
-  val map=list
+  val listWithDups=List.fill(10)(Random.nextInt(5))
+  val map=listWithDups
     .groupBy(identity)
     .mapValues(_.size)
   println(map)
-
-  println(list
-    .map(doubleIt))
-
-  def doubleIt(i:Int)=2*i
 
   //more here
   //https://www.ybrikman.com/writing/2013/05/31/10-recipes-for-turning-imperative-java/

@@ -1,4 +1,5 @@
-package Implicits
+package functionalfeatures.Implicits
+
 class A
 class B
 
