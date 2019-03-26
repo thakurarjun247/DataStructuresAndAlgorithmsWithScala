@@ -1,6 +1,10 @@
 package misc
 
 import scala.collection.immutable.ListMap
+//find the winner of election, the number of votes is the
+//number of times a name appears in the seq,
+//if there is a tie, the name that is alphabetically greater wins
+//i.e. Zeba beats Alice
 object Two
   extends App {
   val list=Array("Alice",

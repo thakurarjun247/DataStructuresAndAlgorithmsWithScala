@@ -31,6 +31,7 @@ object BinarySearchTree extends App {
   bottomView(root)
   bottomViewWithManualSorting(root)
   topView(root)
+  printMirror(root)
 
 
   def insert(root: Node, key: Int): Node = {
@@ -103,10 +104,13 @@ object BinarySearchTree extends App {
     }
     map
       .foreach(pair => print(s" ${pair._2}"))
+    //or
+    println
+    map.values.foreach(value => print(s"$value "))
 
   }
   def bottomViewWithManualSorting(root: Node) = {
-    println("\nBottom view with manual sorting..")
+    println("\nBottom view without TreeMap...")
     //keep them unordered, we dont use treemap here instead sort in the
     //end, more efficient as we don't need the ordering overhead during
     //the whole process
@@ -129,6 +133,9 @@ object BinarySearchTree extends App {
         }
       }
     }
+    println("without sorting...")
+    map.values.foreach(value => print(s"$value "))
+    println("\nafter manual sorting...")
     map
       .toList
       //sort here
@@ -191,5 +198,20 @@ object BinarySearchTree extends App {
           level._2.foreach(print)
         })
     }
+  }
+  def createMirrorImage(originalNode: Node, mirroredNode: Node):Node = {
+    mirroredNode.key = (originalNode.key)
+    if (originalNode.left != null) mirroredNode.left = (createMirrorImage(originalNode.right, new Node(0)))
+    if (originalNode.right != null) mirroredNode.right=(createMirrorImage(originalNode.left, new Node(0)))
+    mirroredNode
+  }
+  def printMirror(root: Node) = {
+    print("\nCreating mirror image of the following tree")
+    //original tree
+    printLevelByLevel(root)
+    val mirrorRootInitial = new Node(0)
+    print("\nmirror tree...")
+    val mirrorRootFinal = createMirrorImage(root, mirrorRootInitial)
+    printLevelByLevel(mirrorRootFinal)
   }
 }
