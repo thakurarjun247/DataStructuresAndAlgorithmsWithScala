@@ -16,12 +16,14 @@ object LinkedList extends App {
   traverse(start)
   println("start is " + start.key)
   traverseNew(start.next)
-  reverse(start)
+ // reverse(start)
+  reverseNew(start)
+
   /* println("what index to delete?")
   val deleteAt=readInt()
   val index=delete(start, deleteAt)
   println(s"found at ${index.getOrElse("not found")}")*/
-  traverse(start)
+  //traverse(start)
   def createUsingUserInput() = {
     print("enter length of LL: ")
     val len = readInt
@@ -50,6 +52,27 @@ a.foreach(insert)
     traverseNew(cur)
     cur
   }
+  def reverseNew(startNode: Node): Node = {
+    println("currently it's => "+traverseNew(startNode.next))
+    if (startNode == null) return startNode
+    else {
+      //temp head variable as the startNode is immutable
+      var head = startNode
+      var prev: Node = null
+      var curr: Node = null
+      var next:Node=null
+      while (head != null) {
+        next=head.next
+        curr = head
+        head.next = prev
+        prev = curr
+        head = next
+      }
+      println("after reversing =>" + traverseNew(curr))
+      curr
+    }
+  }
+
   def traverse(start: Node) = {
     var temp = start
     while (temp.next != null) {
