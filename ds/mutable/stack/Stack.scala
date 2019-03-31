@@ -8,7 +8,12 @@ class Stack[T] extends AbstractStack[T] {
 
 
 
-  override def push(t: T) = top = Node(t, top)
+  override def push(t: T) = {
+    top = Node(t, top)
+    //or
+    /*val node = Node(t, top)
+    top=node*/
+  }
 
   override def pop() = {
     if(isEmpty) throw new NoSuchElementException("stack is empty, can't pop")

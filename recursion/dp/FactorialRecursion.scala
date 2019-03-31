@@ -1,4 +1,4 @@
-package recursion.dp
+package recursion.dp;
 
 object FactorialRecursion extends App{
         25 to 30 map(i=>print(fact(i)))

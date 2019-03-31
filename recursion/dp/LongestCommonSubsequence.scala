@@ -1,6 +1,6 @@
 package recursion.dp
-import scala.collection.mutable
-import scala.collection.mutable.ListBuffer
+import scala.collection.mutable._;
+import scala.collection._;
 object LongestCommonSubsequence extends App {
   val s1 = "02345"
   val s2 = "093454"

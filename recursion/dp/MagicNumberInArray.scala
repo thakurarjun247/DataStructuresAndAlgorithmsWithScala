@@ -1,6 +1,6 @@
 package recursion.dp
-
 import scala.annotation.tailrec
+;
 
 object MagicNumberInArray extends App {
 

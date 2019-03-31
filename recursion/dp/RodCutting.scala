@@ -1,16 +1,7 @@
-package recursion.dp
-import java.util.Calendar
-import scala.collection.mutable
+package recursion.dp;
+
 object RodCutting extends App {
   //Note: LCS=longestCommonSubsequence
-  val a = Calendar.getInstance().getTimeInMillis
-  println("length = " + getLCSWithoutMemo("abcasdfsadfsdlkjweoiu098", "asdfbcuyrlkj"))
-  println("length = " + getLCSWithoutMemo("ab234527766578c", "asdfc09823459802345lkjb"))
-  val b = Calendar.getInstance().getTimeInMillis
-  println("length = " + getLCSWithMemo("AGGTAB", "GXTXAYB"))
-  println("length = " + getLCSWithMemo("ab234527766578c", "asdfc09823459802345lkjb"))
-  val c = Calendar.getInstance().getTimeInMillis
-  println(b - a, c - b)
   println(rodCut(4, Array(0, 1, 5, 8, 9)))
   println(rodCutWithMemo(4, Array(0, 1, 5, 8, 9)))
   // TODO: make memo work
@@ -42,4 +33,3 @@ object RodCutting extends App {
         .max
   }
 }
-

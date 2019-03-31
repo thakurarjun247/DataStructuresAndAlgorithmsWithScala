@@ -1,4 +1,4 @@
-package recursion.dp
+package recursion.dp;
 
 object PerfactSum extends App {
   assert(isPerfactSum(List(1,3,4,9), 7)==true)

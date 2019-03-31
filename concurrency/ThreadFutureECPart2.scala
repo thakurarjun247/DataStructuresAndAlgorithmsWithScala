@@ -16,6 +16,7 @@ object ThreadFutureECPart2 {
 
     debug("Continuing Main")
     // waits for all tasks to complete before exiting
+
     Await.result(Future.sequence(tasks), Duration.Inf)
     //It took 10 second to complete 20 task of 2 sec each
     //20*2/10 =4

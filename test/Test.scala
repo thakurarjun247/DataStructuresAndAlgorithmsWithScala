@@ -1,5 +1,4 @@
-package practice
-
+package test
 object Test extends App {
   val a = Array(-3, -14, -5, 7, 8, 42, 8, 3);
   println(solution(a))

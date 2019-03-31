@@ -1,4 +1,5 @@
-package recursion.dp
+package recursion.dp;
+
 object Knapsack01 extends App {
   assert(f(Array(2, 2, 4, 5), Array(2, 4, 6, 9), 3, 0, 0) == 4)
   assert(f(Array(2, 2, 4, 5), Array(2, 4, 6, 9), 8, 0, 0) == 13)
