@@ -1,6 +1,7 @@
-package recursion.dp
+package dynamicprogramming
+
+import scala.collection._
 import scala.collection.mutable._;
-import scala.collection._;
 object LongestCommonSubsequence extends App {
   val s1 = "02345"
   val s2 = "093454"

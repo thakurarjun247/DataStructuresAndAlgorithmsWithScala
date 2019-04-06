@@ -1,4 +1,4 @@
-package recursion.dp
+package dynamicprogramming
 
 ;
 object LongestIncreasingSubsequenceContiguousKadanesAlgo extends App {

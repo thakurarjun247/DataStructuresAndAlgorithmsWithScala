@@ -1,5 +1,4 @@
-package recursion.dp;
-
+package dynamicprogramming
 object RodCutting extends App {
   //Note: LCS=longestCommonSubsequence
   println(rodCut(4, Array(0, 1, 5, 8, 9)))

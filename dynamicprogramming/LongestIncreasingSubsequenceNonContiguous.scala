@@ -1,4 +1,4 @@
-package recursion.dp
+package dynamicprogramming
 object LongestIncreasingSubsequenceNonContiguous extends App {
   assert(f(List(2, 5, 1, 8, 3)) == 3)
   assert(f(List()) == 0)

@@ -1,7 +1,7 @@
-package recursion.dp
+package dynamicprogramming
+
 import scala.annotation.tailrec
 ;
-
 object MagicNumberInArray extends App {
 
   //assumption: all elements are distinct

@@ -1,5 +1,4 @@
-package recursion.dp
-
+package dynamicprogramming
 object Palindrome extends App{
 val list=List("01210", "0110" , "", "qwer")
  isPalin(null)

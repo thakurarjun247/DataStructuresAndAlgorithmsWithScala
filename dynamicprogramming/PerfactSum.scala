@@ -1,5 +1,4 @@
-package recursion.dp;
-
+package dynamicprogramming
 object PerfactSum extends App {
   assert(isPerfactSum(List(1,3,4,9), 7)==true)
   assert(isPerfactSum(List(1,3,4,9), 18)==false)

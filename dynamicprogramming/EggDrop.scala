@@ -1,5 +1,4 @@
-package recursion.dp;
-
+package dynamicprogramming
 /**
   * There are n number of eggs and building
   * which has k floors. Write an algorithm to find the

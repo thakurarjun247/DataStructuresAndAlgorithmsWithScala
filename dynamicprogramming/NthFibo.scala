@@ -1,7 +1,6 @@
-package recursion.dp
+package dynamicprogramming
 
 import scala.io.StdIn
-
 object NthFibo extends App {
   //Print nth fibo number
 

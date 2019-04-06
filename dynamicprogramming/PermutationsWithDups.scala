@@ -1,7 +1,6 @@
-package recursion.dp
+package dynamicprogramming
 
 import scala.collection.mutable.ListBuffer
-
 object PermutationsWithDups extends App {
   //println( permutation("ab"))
   "".head

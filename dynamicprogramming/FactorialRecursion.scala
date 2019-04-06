@@ -1,5 +1,4 @@
-package recursion.dp;
-
+package dynamicprogramming
 object FactorialRecursion extends App{
         25 to 30 map(i=>print(fact(i)))
         print(fact(20))

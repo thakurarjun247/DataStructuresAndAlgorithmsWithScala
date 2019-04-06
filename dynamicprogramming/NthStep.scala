@@ -1,4 +1,5 @@
-package recursion.dp
+package dynamicprogramming
+
 import scala.io.StdIn
 /*
 * : A child is running up a staircase with n steps and can hop either
