@@ -12,10 +12,13 @@ object LongestIncreasingSubsequenceNonContiguous extends App {
       // while including LIS in our LIS, we have two cases
       //if currentItem > lastItem we have will add 1 to length of existing LIS
       //if currentItem< lastItem we will create a new LIS so it's length will be reset to 1
-      (if (list.head >= last) f(list.tail, list.head, length + 1) else f(list.tail, list.head, 1)) max
+      (if (list.head >= last) f(list.tail, list.head, length + 1)
+      else
+      //LIS with current item in it
+        f(list.tail, list.head, 1)) max
         //LIS(without current item)
         f(list.tail, last, length)
-      ////return max of above two
+      //return max of above two
     }
   }
 }
