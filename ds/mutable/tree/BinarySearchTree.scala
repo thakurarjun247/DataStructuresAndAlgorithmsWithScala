@@ -17,9 +17,11 @@ class Node(var key: Int,
     }
 }
 object BinarySearchTree extends App {
+  //
   var root: Node = null
   val inputStack = mutable.Stack[Int](4, 2, 6, 1, 3, 5, 7)
   create()
+  printMirror(null)
   printLevelByLevel(root)
   printInorderSuccessors(root)
  /*
@@ -200,7 +202,9 @@ object BinarySearchTree extends App {
         })
     }
   }
+
   def createMirrorImage(originalNode: Node, mirroredNode: Node): Node = {
+    if(originalNode==null) return null
     mirroredNode.key = (originalNode.key)
     if (originalNode.left != null) mirroredNode.left = (createMirrorImage(originalNode.right, new Node(0)))
     if (originalNode.right != null) mirroredNode.right = (createMirrorImage(originalNode.left, new Node(0)))
@@ -214,7 +218,8 @@ object BinarySearchTree extends App {
     print("\nmirror tree...")
     val mirrorRootFinal = createMirrorImage(root, mirrorRootInitial)
     printLevelByLevel(mirrorRootFinal)
-  }
+    print("\nnew mirror tree...")
+   }
 
   def printInorderSuccessors(root: Node):Unit= {
     if (root != null) {

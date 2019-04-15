@@ -12,7 +12,7 @@ package dynamicprogramming
 //Video: https://www.youtube.com/watch?v=o_AJ3VWQMzA
 //Code: https://github.com/gkcs/Competitive-Programming/blob/master/src/main/java/main/java/videos/EggSolver.java
 object EggDrop extends App {
-  print((1 to 5).toList.map(x=>x*x).min)
+ // print((1 to 5).toList.map(x=>x*x).min)
   //n floor, e num of eggs
  // f(8,4)
   print(s"fun(8,4) ${fun(8,4)}")

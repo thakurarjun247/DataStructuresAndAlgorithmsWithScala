@@ -3,7 +3,7 @@ object LCIS extends App {
   //LCIS=LongestContinuousIncreasingSubsequence
   assert(f(Array(5, -9, 6, -2, 3, 4)) == 3)
   assert(f(Array(0, 2, 3, -1, 0, 1, 2, 3, 4, 5, -4, -3, -2)) == 7)
-  def f(a: Array[Int]) = f(a.toList, Integer.MIN_VALUE, 0)
+  def f(a: Array[Int]):Int = f(a.toList, Integer.MIN_VALUE, 0)
   def f(list: List[Int], last: Int, len: Int): Int = {
     list match {
       case Nil => len
