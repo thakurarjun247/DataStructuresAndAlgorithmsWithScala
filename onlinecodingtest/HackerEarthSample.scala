@@ -75,38 +75,37 @@ println("Hi, " + name + ".")                // Writing output to STDOUT
 
 // Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
 */
-
 // Write your code here
+import scala.collection.mutable.ListBuffer
 import scala.io.StdIn._
 object HackerEarthSample extends App {
+  // 123 456 789 456 120
   val n = readInt
   val line = readLine
-/*Sample Input
-2
-3 15
- should be read from stdin*/
-val nums = line
-  .split(" ")
-  .toSeq
-  .map(_.toInt)
-  .filter(_ > 0)
-  .map(convertAll)
-  .flatten
-  .foreach(println)
-
-def convertAll(n: Int): List[String] =
-  (1 to n)
-    .toList
-    .map(convert)
-
-def convert(n: Int): String = {
-  val divByThree = (n % 3 == 0)
-  val divByFive = (n % 5 == 0)
-  val divByThreeFive = divByThree && divByFive
-  if (divByThreeFive) "FizzBuzz"
-  else if (divByThree) "Fizz"
-  else if (divByFive) "Buzz"
-  else n.toString
-}
+  /*Sample Input
+  2
+  3 15
+   should be read from stdin*/
+  val nums = line
+    .split(" ")
+    .toSeq
+    .map(_.toInt)
+    .filter(_ > 0)
+    .map(convertAll)
+    .flatten
+    .foreach(println)
+  def convertAll(n: Int): List[String] =
+    (1 to n)
+      .toList
+      .map(convert)
+  def convert(n: Int): String = {
+    val divByThree = (n % 3 == 0)
+    val divByFive = (n % 5 == 0)
+    val divByThreeFive = divByThree && divByFive
+    if (divByThreeFive) "FizzBuzz"
+    else if (divByThree) "Fizz"
+    else if (divByFive) "Buzz"
+    else n.toString
+  }
 }
 
