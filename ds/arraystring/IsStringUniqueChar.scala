@@ -1,4 +1,4 @@
-package ctci.ch01arrayandstring
+package ds.arraystring
 
 object IsStringUniqueChar extends App {
   println(check("abcde"))

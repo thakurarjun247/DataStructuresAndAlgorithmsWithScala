@@ -82,6 +82,8 @@ object HackerEarthSample extends App {
   // 123 456 789 456 120
   val n = readInt
   val line = readLine
+  import scala.util.Random.nextInt
+  nextInt()
   /*Sample Input
   2
   3 15

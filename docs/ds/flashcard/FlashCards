@@ -1,0 +1,59 @@
+How to calculate factorial of a very large number
+    convert number to string and reverse it
+    store it in char array
+    Do the mulutipliaction as you do manually, by keeping track of carry etc.
+    reverse the answer back
+    How to know if a bt is a bst?
+============================================================================================
+Pass min, max range to each recursive call, and compare current node with the min/max range
+============================================================================================
+Which data structure supports insert, delete, findMin, findMax operation in O(1)?
+OR
+Devise a stack-like data structure that does push, pop and min (or max) operations in O(1) time. There are no space constraints.
+The answer is, you use two stacks: the main stack, and a min (or max) stack.
+Maintain three stacks: push/pop for every insert/delete getMin and getMax can be peeked rom
+MIN and MAX
+For 5,2,4,3,1 you would have:
+MAIN   MIN      MAX
++---+  +---+    +---+
+| 1 |  | 1 |    | 5 |
+| 3 |  | 2 |    | 5 |
+| 4 |  | 2 |    | 5 |
+| 2 |  | 2 |    | 5 |
+| 5 |  | 5 |    | 5 |
++---+  +---+    +---+
+
+============================================================================================
+efficient data structure that supports findMin, findMax, deleteMin, deleteMax, Insert, and delete?
+Maintain a min and a max heap
+findMin findMax in o(1)
+insert delete in n+n time i.e. O(n)
+deleteMin:
+    from minHeap O(n),
+    from maxHeap finding min is time taking i.e. O(n) https://cs.stackexchange.com/questions/40591/searching-through-a-heap-complexity
+Maintain a map where key is node and value has two pointers keeping track of location
+in min and max heap respectively
+e.g.
+    minHeap
+        1
+       / \
+      5   3
+
+  maxHeap
+          5
+         / \
+        1   3
+
+   map
+       1 | (pointer to root of min, pointer to left of root in maxHeap)
+       5 |
+       3 |
+Now the findMin and findMax become O(1) for both the heaps
+i.e. findMin becomes O(1) even in maxheap as we have it's pointer in map
+
+deleteMin and deleteMax are O(logN) now.
+===========================================================================================
+
+============================================================================================
+
+============================================================================================

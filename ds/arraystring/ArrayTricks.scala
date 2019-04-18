@@ -1,4 +1,4 @@
-package ds
+package ds.arraystring
 object ArrayTricks extends App {
   //TODO: fails for
 //  assert(search(Array(1), 2)== -1)

@@ -1,0 +1,6 @@
+Model restaurent reservation system with Cassandra data modelling.
+Inter microservice communication.
+Capacity of load balancer, apache application instance etc.
+Gossip protocol
+Sharding
+Consistent Hashing
