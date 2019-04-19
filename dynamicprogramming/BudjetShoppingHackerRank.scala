@@ -1,5 +1,6 @@
 package dynamicprogramming
-object BudjetShoppingHackerRank {
+object BudjetShoppingHackerRank extends App{
+  //TODO: working but adding memo is required
   /*
 Helen has n dollars budgeted to purchase Math notebooks.
 There are m stores that stock unlimited supplies of notebooks in

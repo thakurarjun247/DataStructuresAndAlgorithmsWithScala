@@ -249,9 +249,24 @@ object BinarySearchTree extends App {
 
     }
   }
-  def findLowestCommonAncestor(a:Node, b:Node):Node={
-    null
+ /* def findLowestCommonAncestor(root:Node, a:Node, b:Node):Node={
+    if(a==null || b==root) b
+    else if (b==null || a==root) a
+    else if(b.contains(a)) b
+    else if(a.contains(b)) a
+    else{
+     val leftContainsA=root.left.contains(a)
+      val rightContainsA=root.right.contains(a)
+      val leftContainsB=root.left.contains(b)
+      val rightContainsB=root.right.contains(b)
+      if((leftContainsA && !leftContainsB)  || (rightContainsA && !rightContainsB))
+        root
+      else findLowestCommonAncestor(root.left, a, b)
+    }
   }
+*/
+  def contains(node:Node):Boolean=true
+
 
   def areTwoTreesIdentical(a: Node, b: Node): Boolean =
     if (a == null && b == null) true

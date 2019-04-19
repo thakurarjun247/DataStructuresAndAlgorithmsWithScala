@@ -1,5 +1,4 @@
-package dynamicprogramming
-
+package recursion
 import scala.collection.mutable.ListBuffer
 object Subsets extends  App{
   val x= getSubsets(Set(1,2))

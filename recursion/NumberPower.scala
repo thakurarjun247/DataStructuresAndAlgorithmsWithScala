@@ -1,4 +1,4 @@
-package plainrecursion
+package recursion
 object NumberPower extends App {
   assert(f(-2, 5) == -32)
   assert(f(-2, 6) == 64)
