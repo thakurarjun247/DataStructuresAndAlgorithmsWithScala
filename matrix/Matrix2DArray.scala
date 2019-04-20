@@ -1,5 +1,4 @@
-package collection
-
+package matrix
 object Matrix2DArray extends App{
 
   //Matrix

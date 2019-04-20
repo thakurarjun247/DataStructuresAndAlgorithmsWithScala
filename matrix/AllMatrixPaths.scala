@@ -1,5 +1,4 @@
-package dynamicprogramming
-import collection.Matrix2DArray
+package matrix
 import scala.collection.mutable
 object AllMatrixPaths extends App {
   /*

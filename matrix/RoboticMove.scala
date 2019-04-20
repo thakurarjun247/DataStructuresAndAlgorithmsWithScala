@@ -1,3 +1,4 @@
+package matrix
 import scala.annotation.tailrec
 object RoboticMove extends App {
   /*
