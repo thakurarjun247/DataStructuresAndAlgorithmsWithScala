@@ -1,5 +1,4 @@
-package dynamicprogramming
-
+package recursion
 import scala.collection.mutable.ListBuffer
 object PermutationsUniqueChars extends App {
   val list = new ListBuffer[String]()

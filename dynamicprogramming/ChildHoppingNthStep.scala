@@ -6,7 +6,7 @@ import scala.io.StdIn
  * 1 step, 2 steps, or 3 steps at a time. Implement a method to count
  * how many possible ways the child can run up the stairs.
  */
-object NthStep extends App {
+object ChildHoppingNthStep extends App {
   println("enter number of steps")
   val n = StdIn.readInt
   hop(n)

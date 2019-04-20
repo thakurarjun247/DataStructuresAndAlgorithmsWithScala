@@ -6,8 +6,9 @@ import scala.collection.mutable.Map
 * of coins required to make the change for the amount ‘A’.*/
 //https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/CoinChangingMinimumCoin.java
 object MinimumCoinChange extends App {
+  implicit val memo: Map[Int, Int] = Map()
   println(f(Array(1, 75, 40), 80))
-  println(fMemoReady(Array(1, 75, 40), 80))
+  println(fMemo(Array(1, 75, 40), 80))
   //tail recursion: pass the variable into stack calls
   //in a case similar to coin change pass n i.e. num of coins to stack calls so that
   //we don't worry about doing 1+f(...) because it won't be
@@ -27,14 +28,15 @@ object MinimumCoinChange extends App {
   }
   //memoization: Do the opposite of above because we can't
   //memoize with a variable in f() argument
-  def fMemoReady(coins: Array[Int], amount: Int): Int = {
-    if (amount == 0) 0
-    else if (coins.isEmpty) Integer.MAX_VALUE - 10000 //adding something to max val wil overflow
-    //leave it
-    else if (amount < coins.head) fMemoReady(coins.tail, amount)
-    //take it
-    else if (amount == coins.head) 1
-    //take it or leave it
-    else (1 + fMemoReady(coins, amount - coins.head)) min fMemoReady(coins.tail, amount)
+
+  def fMemo(coins: Array[Int], amount: Int)(implicit memo: Map[Int, Int]): Int = {
+    if (amount == 0) return 0
+    else if (coins.isEmpty) return Integer.MAX_VALUE
+    if (!(memo.contains(coins.size))) {
+      val value = if (coins.head > amount) fMemo(coins.tail, amount)
+      else fMemo(coins.tail, amount) min ( 1+ fMemo(coins, amount - coins.head))
+      memo += coins.length -> value
+    }
+    memo(coins.size)
   }
 }
