@@ -1,7 +1,4 @@
-package algorithms.devideandconquer
-//CLRS page 71
-// TODO: make this solution work, here is java code https://www.geeksforgeeks.org/maximum-subarray-sum-using-divide-and-conquer-algorithm/
-
+package devideandconquer
 object MaxSubArraySum extends App {
   def findMaxCrossingSubarray(a: Array[Int], low: Int, mid: Int, high: Int) = {
     var leftSum = Integer.MIN_VALUE
@@ -50,5 +47,3 @@ object MaxSubArraySum extends App {
     }
 
 }
-
-
