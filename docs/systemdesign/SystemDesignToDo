@@ -1,5 +1,5 @@
 Model restaurent reservation system with Cassandra data modelling.
-Inter microservice communication.
+Inter microservice communication: https://dzone.com/articles/how-kafka-solves-common-microservice-communication
 Capacity of load balancer, apache application instance etc.
 Gossip protocol
 Sharding

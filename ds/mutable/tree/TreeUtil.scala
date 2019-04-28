@@ -1,80 +1,28 @@
 package ds.mutable.tree
-import scala.collection.mutable
-import scala.io.StdIn._
-class Node(var key: Int,
-           var left: Node = null,
-           var right: Node = null,
-           var hd: Int = 0,
-           var level: Int = 0,
-           var parent: Node = null) {
-  override def toString = getTabs(level) + s"($key)"
-  def getTabs(level: Int): String =
-    level match {
-      case 0 => "\t\t  "
-      case 1 => "\t  "
-      case 2 => "  "
-      case _ => " "
-    }
-}
-object BinarySearchTree extends App {
-  //
-  var root: Node = null
-  val inputStack = mutable.Stack[Int](4, 2, 6, 1, 3, 5, 7)
-  create()
-  printMirror(null)
-  printLevelByLevel(root)
-  printInorderSuccessors(root)
- /*
-  println("\nInorder traversal...")
-  inorder(root)
-  levelOrder(root)
-  bottomView(root)
-  bottomViewWithManualSorting(root)
-  topView(root)
-  printMirror(root)*/
-  val a=BSTFromSortedArray.createTreeFromArray(1 to 10 toArray)
-  val b=BSTFromSortedArray.createTreeFromArray(1 to 10 toArray)
-  val c=BSTFromSortedArray.createTreeFromArray(1 to 11 toArray)
-  val d=null
-  println(areTwoTreesIdentical(a,b))
-  println(areTwoTreesIdentical(b,c))
-  println(areTwoTreesIdentical(c,d))
-  //println(areTwoTreesIdentical())
+import util.DateTimeUtil
 
-  def insert(root: Node, key: Int): Node = {
-    if (root == null) return new Node(key)
-    //can't be rewritten as
-    //if (root == null) root=new Node(key)
-    //reassign to val root
+import scala.collection.mutable
+object TreeUtil extends App {
+  val root = createTreeFromArray(1 to 15 toArray)
+  // val root2= f(1 to 100 toArray)
+  // BinarySearchTree.inorder(root)
+  //BinarySearchTree.printLevelByLevel(root)
+  println(IsBinaryTreeHeightBalanced.isBalanced(root))
+/*  DateTimeUtil.timeIt({
+    IsBinaryTreeHeightBalanced.isBalanced(root)
+  })*/
+
+  def createBinarySearchTree(a: Array[Int]=Array(4, 2, 6, 1, 3, 5, 7))=createTreeFromArray(a)
+  def createBinaryTree(a: Array[Int]= (1 to 10).toArray )=createTreeFromArray(a)
+
+   private def createTreeFromArray(a: Array[Int]): Node = {
+    if (a.isEmpty) null
     else {
-      //need to set to left so that tree expands in left and right.
-      if (key <= root.key) {
-        root.left = insert(root.left, key)
-        //set parent so that we can use this infor in
-        //finding inorder successor
-      root.left.parent=root}
-      else {
-        root.right = insert(root.right, key)
-      root.right.parent=root}
-    }
-    //need to return root here so that caller always have the same/original root
-    root
-  }
-  def inorder(root: Node): Unit = {
-    if (root != null) {
-      inorder(root.left)
-      print(root.key + " ")
-      inorder(root.right)
-    }
-  }
-  def create() = {
-    println("Creating BST..")
-    //println("Enter # nodes in tree")
-    var n = inputStack.size //readInt
-    while (n != 0) {
-      // println("Enter node value: ")
-      root = insert(root, inputStack.pop() /*readInt()*/)
-      n = n - 1
+      val (a1, a2) = a.splitAt(a.size / 2)
+      val root = new Node(a2.head)
+      root.left = (createTreeFromArray(a1))
+      root.right = createTreeFromArray(a2.tail)
+      root
     }
   }
   def levelOrder(root: Node) =
@@ -219,15 +167,15 @@ object BinarySearchTree extends App {
     val mirrorRootFinal = createMirrorImage(root, mirrorRootInitial)
     printLevelByLevel(mirrorRootFinal)
     print("\nnew mirror tree...")
-   }
+  }
 
   def printInorderSuccessors(root: Node):Unit= {
     if (root != null) {
       printInorderSuccessors(root.left)
       println(s"${root.key} parent ${if(root.parent==null) null else root.parent.key} => ${inorderSuccessor(root)}")
-     // if (root.key == 7) {
-        printInorderSuccessors(root.right)
-  //    }
+      // if (root.key == 7) {
+      printInorderSuccessors(root.right)
+      //    }
     }
     def inorderSuccessor(root: Node): Node =
       if (root == null) null
@@ -241,7 +189,7 @@ object BinarySearchTree extends App {
     def findForeparentGreaterThanANode(root: Node): Node = {
       if (root == null || root.parent == null) null
       //reached top
-    //  else if (root.parent == null) null
+      //  else if (root.parent == null) null
       //found the right foreparent
       else if (root.parent.key < root.key)
         findForeparentGreaterThanANode(root.parent)
@@ -249,24 +197,6 @@ object BinarySearchTree extends App {
 
     }
   }
- /* def findLowestCommonAncestor(root:Node, a:Node, b:Node):Node={
-    if(a==null || b==root) b
-    else if (b==null || a==root) a
-    else if(b.contains(a)) b
-    else if(a.contains(b)) a
-    else{
-     val leftContainsA=root.left.contains(a)
-      val rightContainsA=root.right.contains(a)
-      val leftContainsB=root.left.contains(b)
-      val rightContainsB=root.right.contains(b)
-      if((leftContainsA && !leftContainsB)  || (rightContainsA && !rightContainsB))
-        root
-      else findLowestCommonAncestor(root.left, a, b)
-    }
-  }
-*/
-  def contains(node:Node):Boolean=true
-
 
   def areTwoTreesIdentical(a: Node, b: Node): Boolean =
     if (a == null && b == null) true
@@ -274,6 +204,4 @@ object BinarySearchTree extends App {
     else (a.key == b.key) && areTwoTreesIdentical(a.left, b.left) && areTwoTreesIdentical(a.right, b.right)
 
 
-
-
-  }
+}

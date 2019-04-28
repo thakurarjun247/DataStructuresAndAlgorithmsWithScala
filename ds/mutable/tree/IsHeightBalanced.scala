@@ -1,5 +1,9 @@
 package ds.mutable.tree
 object IsBinaryTreeHeightBalanced extends App {
+  val root=TreeUtil.createBinaryTree()
+  println(isBalanced(root))
+  println(isBalancedMemo(root))
+
   def isBalanced(root: Node): Boolean =
     if (root == null) true
     else math.abs(getHeight(root.left) - getHeight(root.right)) < 2

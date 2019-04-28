@@ -1,0 +1,6 @@
+How to calculate factorial of a very large number
+    convert number to string and reverse it
+    store it in char array
+    Do the mulutipliaction as you do manually, by keeping track of carry etc.
+    reverse the answer back
+============================================================================================

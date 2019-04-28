@@ -1,6 +1,7 @@
 package dynamicprogramming
 object LongestIncreasingSubsequenceNonContiguous extends App {
   assert(f(List(2, 5, 1, 8, 3)) == 3)
+  assert(f(List(2, 5, 1, 8, 3, -4,-3, -2, 0, -1)) == 4)
   assert(f(List()) == 0)
   assert(f(List(3, 4, -1, 0, 6, 2, 3)) == 4)
   def f(list: List[Int]): Int = f(list, Integer.MIN_VALUE, 0)

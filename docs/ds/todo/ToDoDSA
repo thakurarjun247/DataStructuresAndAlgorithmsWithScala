@@ -1,21 +1,15 @@
-https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/
 Egg drop
-Kadanes
-search in rotated sorted
-
 https://www.geeksforgeeks.org/myntra-interview-experience-set-6-on-campus-for-software-engineer/
 https://www.geeksforgeeks.org/myntra-interview-experience-set-8-on-campus/
-https://www.geeksforgeeks.org/dynamic-programming-subset-sum-problem/
-http://quiz.geeksforgeeks.org/heap-sort/
+
 
 Heaps implementation //https://codereview.stackexchange.com/questions/54108/scala-heap-implementation
 Heap sort
-merging
-HashMap and hashing function, collision
+
 
 //two ques from set 6 amzn, soln in ctci
 Algorithm to find LCA of Binary tree and BST
-get first k min element from large array
+
 //set 5 amazon
 1) A 9X9 board is given . Need to verify whether its a valid sudoku solution or not.
 2) An input file is given which contains words , they may be repeated. Find the k most repeated words

@@ -1,10 +1,10 @@
 package ds.mutable.tree
 object IsBinaryTreeBST extends App {
-  val bstRoot = BSTFromSortedArray.createTreeFromArray(1 to 10 toArray)
-  val nonBSTRoot = BSTFromSortedArray.createTreeFromArray(Array(2, 4, 3, 1, 6, 8, 0, 11, 67))
-  BinarySearchTree.printLevelByLevel(bstRoot)
+  val bstRoot = TreeUtil.createBinarySearchTree()
+  val nonBSTRoot = TreeUtil.createBinaryTree()
+  TreeUtil.printLevelByLevel(bstRoot)
   println(isBST(bstRoot))
-  BinarySearchTree.printLevelByLevel(nonBSTRoot)
+  TreeUtil.printLevelByLevel(nonBSTRoot)
   println(isBST(nonBSTRoot))
   def isBST(root: Node): Boolean = isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE)
   def isBST(root: Node, min: Int, max: Int): Boolean =

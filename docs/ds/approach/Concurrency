@@ -1,0 +1,12 @@
+1. Design a data structure for updating an object efficiently in a multithreaded environment. (critical section problem)
+What is deadlock, create a deadlock (code) and how to resolve this.
+Print even odd using multi-threading
+What is Implicit and explicit locking. How manual works for threads? Interfaces and  Class used for implementing explicit locking.
+Design of distributed locking.
+– I suggested file based locking mechanism, jvm to jvm communication.
+– He asked what about db based locking. Could not explain properly.
+How to design a system such that – one type(kind/somePK) of data is always updated in sequence no dirty update.
+– I suggested map-reduce approach.
+1. Difference between semaphore and mutex?
+2. What are race conditions? How to avoid them?
+3. What is a dead lock? how to detect it?

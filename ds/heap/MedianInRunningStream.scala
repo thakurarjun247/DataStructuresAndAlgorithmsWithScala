@@ -1,4 +1,4 @@
-package stream
+package ds.heap
 import scala.collection.mutable.PriorityQueue
 object MedianInRunningStream extends App {
   def minHeapOrder(i: Int) = -i

@@ -1,0 +1,4 @@
+Minimum lines to cover all points
+We can solve this problem by considering the slope of all points with (xO, yO). If two distinct points have the same slope with (xO, yO) then they can be covered with same line only so we can track slope of each point and whenever we get a new slope we will increase our line count by one.
+https://www.geeksforgeeks.org/minimum-lines-cover-points/
+==========================================================================================

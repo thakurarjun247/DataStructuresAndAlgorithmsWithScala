@@ -1,12 +1,3 @@
-How to calculate factorial of a very large number
-    convert number to string and reverse it
-    store it in char array
-    Do the mulutipliaction as you do manually, by keeping track of carry etc.
-    reverse the answer back
-    How to know if a bt is a bst?
-============================================================================================
-Pass min, max range to each recursive call, and compare current node with the min/max range
-============================================================================================
 Which data structure supports insert, delete, findMin, findMax operation in O(1)?
 OR
 Devise a stack-like data structure that does push, pop and min (or max) operations in O(1) time. There are no space constraints.
@@ -53,6 +44,15 @@ i.e. findMin becomes O(1) even in maxheap as we have it's pointer in map
 
 deleteMin and deleteMax are O(logN) now.
 ===========================================================================================
+Data structure: O(1)
+ insert,
+ remove,
+ contains,
+ get random element
+
+ https://stackoverflow.com/questions/5682218/data-structure-insert-remove-contains-get-random-element-all-at-o1
+
+
 
 ============================================================================================
 

@@ -1,0 +1,14 @@
+How to know if a bt is a bst?
+    Pass min, max range to each recursive call, and compare current node with the min/max range
+============================================================================================
+Recursive Preorder Traversal
+To convert an inherently recursive procedures to iterative, we need an explicit stack. Following is a simple stack based iterative process to print Preorder traversal.
+1) Create an empty stack nodeStack and push root node to stack.
+2) Do following while nodeStack is not empty.
+….a) Pop an item from stack and print it.
+….b) Push right child of popped item to stack
+….c) Push left child of popped item to stack
+Right child is pushed before left child to make sure that left subtree is processed first.
+https://www.geeksforgeeks.org/iterative-preorder-traversal/
+
+================================================================================================================================================
