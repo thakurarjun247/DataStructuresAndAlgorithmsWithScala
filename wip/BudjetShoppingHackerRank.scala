@@ -1,4 +1,4 @@
-package algorithm.dynamicprogramming
+package wip
 object BudjetShoppingHackerRank extends App {
   //TODO: working but adding memo is required
   /*
