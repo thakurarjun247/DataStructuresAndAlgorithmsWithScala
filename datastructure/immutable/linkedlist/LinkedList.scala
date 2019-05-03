@@ -7,8 +7,7 @@ object LinkedList {
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
 }
-object LinkedListApp extends App{
-  val list=LinkedList(1,2,3)
-
+object LinkedListApp extends App {
+  val list = LinkedList(1, 2, 3)
 }
 

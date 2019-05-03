@@ -1,5 +1,4 @@
 package onlinecodingtest
-
 object HackerEarchSampleSQL {
   /*
   Write a query to find the highest average sales among all the salespersons using the given table.
@@ -33,9 +32,7 @@ Marking Scheme: Marks are awarded if any testcase passes
 Allowed Languages: MySQL, PostgreSQL, MSSQL, Oracle_Db
   *
   * */
-
   //////////////SOLUTION MYSQL///////////////
-
   /*
   select MAX(AVG(TotalSale)) group by SalesPerson
 

@@ -76,7 +76,6 @@ println("Hi, " + name + ".")                // Writing output to STDOUT
 // Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
 */
 // Write your code here
-import scala.collection.mutable.ListBuffer
 import scala.io.StdIn._
 object HackerEarthSample extends App {
   // 123 456 789 456 120

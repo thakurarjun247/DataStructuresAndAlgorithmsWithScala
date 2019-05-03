@@ -1,5 +1,4 @@
 package datastructure.mutable.linkedlist
-
 import scala.collection.mutable
 import scala.io.StdIn.readInt
 class Node(var key: Int, var next: Node = null) {
@@ -7,18 +6,17 @@ class Node(var key: Int, var next: Node = null) {
   override def toString = s"$key ->($nextNode)"
 }
 object LinkedList extends App {
-  val set=  mutable.Set[Int]()
+  val set = mutable.Set[Int]()
   println(set.add(1))
   println(set.add(1))
   var start = new Node(0)
   //createUsingUserInput()
-  createUsingGivenArray(Array(1,2,3,4))
+  createUsingGivenArray(Array(1, 2, 3, 4))
   traverse(start)
   println("start is " + start.key)
   traverseNew(start.next)
- // reverse(start)
+  // reverse(start)
   reverseNew(start)
-
   /* println("what index to delete?")
   val deleteAt=readInt()
   val index=delete(start, deleteAt)
@@ -32,9 +30,8 @@ object LinkedList extends App {
       insert(readInt)
     })
   }
-
-  def createUsingGivenArray(a:Array[Int]) = {
-a.foreach(insert)
+  def createUsingGivenArray(a: Array[Int]) = {
+    a.foreach(insert)
   }
   def reverse(node: Node): Node = {
     println("reversing...")
@@ -53,16 +50,16 @@ a.foreach(insert)
     cur
   }
   def reverseNew(startNode: Node): Node = {
-    println("currently it's => "+traverseNew(startNode.next))
+    println("currently it's => " + traverseNew(startNode.next))
     if (startNode == null) return startNode
     else {
       //temp head variable as the startNode is immutable
       var head = startNode
       var prev: Node = null
       var curr: Node = null
-      var next:Node=null
+      var next: Node = null
       while (head != null) {
-        next=head.next
+        next = head.next
         curr = head
         head.next = prev
         prev = curr
@@ -72,7 +69,6 @@ a.foreach(insert)
       curr
     }
   }
-
   def traverse(start: Node) = {
     var temp = start
     while (temp.next != null) {
@@ -105,7 +101,6 @@ a.foreach(insert)
       traverseNew(node.next)
     }
   }
-
 }
 
 

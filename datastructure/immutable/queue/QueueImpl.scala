@@ -1,5 +1,4 @@
 package datastructure.immutable.queue
-
 import scala.collection.mutable.DoubleLinkedList
 /**
   * Doubly LinkedList based implementation of immutable queue,

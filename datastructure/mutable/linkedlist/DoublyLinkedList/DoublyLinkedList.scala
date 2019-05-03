@@ -1,5 +1,4 @@
 package datastructure.mutable.linkedlist.DoublyLinkedList
-import scala.collection.mutable.ListBuffer
 case class Node(val key: (String, String), var next: Node = null, var prev: Node = null) {
   override def toString: String = s"(${key._1}, ${key._2})"
 }
@@ -13,7 +12,7 @@ class DoublyLinkedList {
   override def toString = printLL("", head)
   def printLL(ans: String, head: Node): String = {
     if (head == null) ans
-    else printLL(ans + head.toString + " <=> "/*s"(${head.key._1}, ${head.key._2}) <=> "*/, head.next)
+    else printLL(ans + head.toString + " <=> " /*s"(${head.key._1}, ${head.key._2}) <=> "*/ , head.next)
     //  println("start to end...")
     /* while (tempHead != null) {
        builder.append()

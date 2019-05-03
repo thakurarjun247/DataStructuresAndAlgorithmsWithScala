@@ -18,14 +18,13 @@ object BinaryMinHeap extends App {
   }
   def upshift = print()
   def downshift = {
-
   }
-  def swap(a:Int, b:Int)={
-    val temp=list(a)
-    list(a)=list(b)
-    list(b)=temp
+  def swap(a: Int, b: Int) = {
+    val temp = list(a)
+    list(a) = list(b)
+    list(b) = temp
   }
-  def parent(i:Int)=(i-1)/2
-  def leftChild(i:Int)=2*i+1
-  def rightChild(i:Int)=2*i+2
+  def parent(i: Int) = (i - 1) / 2
+  def leftChild(i: Int) = 2 * i + 1
+  def rightChild(i: Int) = 2 * i + 2
 }

@@ -1,13 +1,10 @@
 package datastructure.mutable.cache
-
 import datastructure.mutable.linkedlist.DoublyLinkedList.{DoublyLinkedList, Node}
-
-import scala.util.Random
 //TODO: replace LRU item if it's a miss
 class LRUCache(maxCacheSize: Int) {
-/*  override def toString:String={
-    map.toString + " " + q.toString
-  }*/
+  /*  override def toString:String={
+      map.toString + " " + q.toString
+    }*/
   var currentCacheSize = 0
   //A doubly LL to maintain LRU order
   //LRU item will be on the tail of LL so that it can be found and
@@ -21,34 +18,32 @@ class LRUCache(maxCacheSize: Int) {
   def seek(key: String): String = {
     //miss
     if (!map.contains(key)) {
-       println(s"key= $key, that's a miss")
+      println(s"key= $key, that's a miss")
       val value = dbLookup(key)
       val node = Node((key, value))
       clearLRU
-      currentCacheSize=currentCacheSize+1
+      currentCacheSize = currentCacheSize + 1
       map += (key -> node)
       q.insertNodeAtHead(node)
-
     }
-    val node=map(key)
+    val node = map(key)
     q.moveNodeToFront(node)
-    val value=node.key._2
-    println(key+" -> "+value)
+    val value = node.key._2
+    println(key + " -> " + value)
     value
   }
-  def clear={
+  def clear = {
     q.clear
     map.clear
   }
-  def dbLookup(key: String) = "valueOfKey"+key
-  def clearLRU()={
-    if(currentCacheSize >= maxCacheSize){
+  def dbLookup(key: String) = "valueOfKey" + key
+  def clearLRU() = {
+    if (currentCacheSize >= maxCacheSize) {
       //TODO: fix null returned from deleteTail
-      val tail=q.tail
-      println(s"cache is full, deleting ${q.tail} ..." )
+      val tail = q.tail
+      println(s"cache is full, deleting ${q.tail} ...")
       q.deleteTail
-
-      currentCacheSize-= 1
+      currentCacheSize -= 1
       map.remove(tail.key._1)
     }
   }

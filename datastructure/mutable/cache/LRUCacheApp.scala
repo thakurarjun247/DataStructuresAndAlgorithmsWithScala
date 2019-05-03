@@ -1,7 +1,6 @@
 package datastructure.mutable.cache
-
-object LRUCacheApp extends App{
-  val cache=new LRUCache(2)
+object LRUCacheApp extends App {
+  val cache = new LRUCache(2)
   cache.seek("one")
   cache.seek("two")
   cache.seek("one")

@@ -1,0 +1,44 @@
+The following questions asked in various interview recently in Bengaluru.
+
+SaltSide.se - Backend Engineer, GoLang
+1. Questions on Kafka topics, partitions, producer, consumers.
+2. Design a thread pool executer/ fork join pool.
+3. What design patterns have you used. 
+4. Functional programming advantages over functional programming.
+
+AWS - Java
+1. Which State do you belong to?
+2. Path with largest some in a tree.
+3. Rain water clogged between buildings
+4. Forgot questions (2 of them) from online coding test, had to solve only in Java, C or C++.
+
+
+WalmartLabs – Backend Engineer, Java
+1. Create one sorted array if you are given three sorted arrays. Use merge part of merge sort.
+2. Array containing only 0, 1 and 2 ; sort it. Eg. Input 020120 , output 000122. Do in linear time with dutch national flag algorithm.
+3. Given two strings, can you you create second string out of first if you are allowed to only insert/delete/update one of the characters in one of the strings.
+4. Matrix DP problems, reach from source to destination with minimum cost, each element in 2D matrix represents the cost. Similar to robot in grid and shortest path problem.
+5. URL shortner design.
+6. Given train coaches like this reverse order of peseanger coaches upto last luggage coach, symbols: E=engine, P=Pessenger, L=Luggage
+7. Input: P1 L1 P2 P3 L2 P4 P5 P6 P7 E
+8. Output: P2 L1 P1 P4 L2 P3 P5 P6 P7 
+
+Myntra – Data Engineer
+1. How to know if there are overlapping subproblems. 
+2. Find an increasing seq of min length 3. Improve the complexity to O(n2), further improve by preprocessing.
+3. Heap creation’s time complexity.
+4. Functional programming advantages over functional programming.
+5. How to find an element in continuous sorted stream.
+6. Find median in continuous stream. 
+7. Given a stream of reapeating number design a data structure to find 	first non repeating number in O(1) time
+8. SQL queries with complex joins, group by and orderby
+9. NoSQL vs RDBMS when to choose what.
+
+Domino Data Lab – Scala Engineer
+1. Design a thread pool executer/ fork join pool.
+2. HackerRank test- print all paths in a DAG
+
+Grofers - Principle Engineer
+1. When to choose Microservices over Monolith?
+2. The interviewer was continuously interrupting and asking next question without letting me complete the current answer. 
+   That’s when I excused myself, I had peace of mind, he had pieces of mind :)
