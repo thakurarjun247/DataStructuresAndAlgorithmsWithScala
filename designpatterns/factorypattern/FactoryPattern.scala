@@ -1,4 +1,4 @@
-package scalaprogramminglanguage.oodesign.patterns
+package designpatterns.factorypattern
 trait Animal {
   def speak: String
 }
@@ -15,9 +15,9 @@ object AnimalFactory {
     case _ => throw new IllegalArgumentException(s"invalid animal name")
   }
 }
-object Application extends App {
-  val dog = AnimalFactory("dog")
-  println(dog.speak)
+object FactoryPattern extends App {
+
+  println(AnimalFactory("dog").speak)
   println(AnimalFactory("cat").speak)
   //println(AnimalFactory("invalid").speak)
 }

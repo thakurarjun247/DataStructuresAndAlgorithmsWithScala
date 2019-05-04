@@ -30,6 +30,9 @@ object RodCuttingNew extends App {
   assert(fMemo(l, p2, len, Map()) == 24)
   assert(fMemo(l, p1, len, Map()) == 22) //22
   assert(fMemo(l3, p3, len3, Map()) == 10) //10
+  assert(fMemoNew(l, p2, len) == 24)
+  assert(fMemoNew(l, p1, len) == 22) //22
+  assert(fMemoNew(l3, p3, len3) == 10) //10
   def fNoMemo(l: Array[Int], p: Array[Int], len: Int): Int = {
     if (len == 0 || l.isEmpty || p.isEmpty) 0
     else {
@@ -39,6 +42,8 @@ object RodCuttingNew extends App {
       else fNoMemo(l.tail, p.tail, len) max p.head + fNoMemo(l, p, len - l.head)
     }
   }
+  /*optimize: Just use an array for memo, where array length = len+1
+ optimize:  a(0)=0 intialize the array with MIN_VALUE*/
   def fMemo(l: Array[Int], p: Array[Int], len: Int, memo: Map[(Int, Int), Int]): Int = {
     if (len == 0 || l.isEmpty || p.isEmpty) 0
     else if (memo.contains(l.length, len)) {
@@ -54,16 +59,24 @@ object RodCuttingNew extends App {
       memo(l.length, len)
     }
   }
-  /* def fMemo(l: Array[Int], p: Array[Int], len: Int, memo:Map[Int, Int]): Int = {
-     if (len == 0 || l.isEmpty || p.isEmpty) 0
-     else {
-       if(!memo.contains(l.tail.size)) memo += l.tail.length -> fMemo(l.tail, p.tail, len, memo)
-       if(!memo.contains(l.size)) memo += l.length -> fMemo(l.tail, p.tail, len, memo)
-       val leaveIt = fMemo(l.tail, p.tail, len)
-       val takeIt = p.head + fMemo(l, p, len - l.head)
-       if (l.head > len) leaveIt
-       else takeIt max leaveIt
-     }
-   }
- */
+  def fMemoNew(l: Array[Int], p: Array[Int], len: Int): Int = {
+    val memo = Array.fill(len + 1)(Integer.MIN_VALUE)
+    fMemoNew(l, p, len, memo)
+  }
+  def fMemoNew(l: Array[Int], p: Array[Int], len: Int, memo: Array[Int]): Int = {
+    if (len == 0 || l.isEmpty || p.isEmpty) 0
+    else {
+      if (memo(len) == Integer.MIN_VALUE) {
+        val maxRevenue = if (l.head > len) fMemoNew(l.tail, p.tail, len, memo)
+        else {
+          val takeIt = p.head + fMemoNew(l, p, len - l.head, memo)
+          val leaveIt = fMemoNew(l.tail, p.tail, len, memo)
+          leaveIt max takeIt
+        }
+        memo(len) = maxRevenue
+        maxRevenue
+      }
+      else memo(len)
+    }
+  }
 }
