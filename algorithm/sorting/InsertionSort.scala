@@ -1,4 +1,8 @@
 package algorithm.sorting
+/*
+Time: n2
+space: 1
+ */
 object InsertionSort extends App {
   val a = Array(5, 2, 4, 6, 1, 3)
   inSort(a).foreach(print)

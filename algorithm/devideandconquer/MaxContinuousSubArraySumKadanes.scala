@@ -1,4 +1,8 @@
-package algorithm.dynamicprogramming
+package algorithm.devideandconquer
+/*
+time O(n)
+space 1
+ */
 object MaxContinuousSubArraySumKadanes extends App {
   assert(f(Array(-2, -3, 4, -1, -2, 1, 5, -3)) == 7)
   assert(f(Array(-2, -3, 1, -1, -2, 1, 5, -3)) == 6)

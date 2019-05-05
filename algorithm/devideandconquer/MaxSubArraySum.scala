@@ -1,6 +1,17 @@
 package algorithm.devideandconquer
+/*
+O(nLog(n))
+space not sure, should be O(n) as mergesort is O(n) space for sure
+ */
 object MaxSubArraySum extends App {
-  def findMaxCrossingSubarray(a: Array[Int], low: Int, mid: Int, high: Int) = {
+  val a = Array(-1, 2, 3, -1, 3)
+  println(findMaxSubArraySum(a))
+  println(findMaxSubArraySum(Array(-2, -5, 6, -2, -3, 1, 5, -6)))
+  /*
+   returns a tuple (leftIndex, rightIndex, sumOfSubarray)
+   */
+  def findMaxSubArraySum(a: Array[Int]): (Int, Int, Int) = findMaxSubArraySum(a: Array[Int], 0, a.size - 1)
+  private def findMaxCrossingSubarray(a: Array[Int], low: Int, mid: Int, high: Int) = {
     var leftSum = Integer.MIN_VALUE
     var sum = 0
     var maxLeft = mid
@@ -21,24 +32,18 @@ object MaxSubArraySum extends App {
         maxRight = j
       }
     }
-    (maxLeft, maxRight, leftSum + rightSum)
+    val sumTotal = leftSum + rightSum
+    (maxLeft, maxRight, sumTotal)
   }
-  val a = Array(-1, 2, 3, -1, 3)
-  println(findMaxSubArraySum(a, 0, a.size - 1))
-  def findMaxSubArraySum(a: Array[Int], low: Int, high: Int): (Int, Int, Int) = {
+  private def findMaxSubArraySum(a: Array[Int], low: Int, high: Int): (Int, Int, Int) = {
     if (high == low) (low, high, a(low))
     else {
-      var mid = (low + high) / 2
+      val mid = (low + high) / 2
       val (leftLow, leftHigh, leftSum) = findMaxSubArraySum(a, low, mid)
       val (rightLow, rightHigh, rightSum) = findMaxSubArraySum(a, mid + 1, high)
       val (crossLow, crossHigh, crossSum) = findMaxCrossingSubarray(a, low, mid, high)
-      /*      (leftSum max crossSum max rightSum) match {
-              case leftSum => (leftLow, leftHigh, leftSum)
-              case rightSum => (rightLow, rightHigh, rightSum)
-              case crossSum => (crossLow, crossHigh, crossSum)
-            }*/
-      if ((leftSum > crossSum) && (leftSum > rightSum)) (leftLow, leftHigh, leftSum)
-      else if ((crossSum > leftSum) && (crossSum > rightSum)) (crossLow, crossHigh, crossSum)
+      if ((leftSum >= crossSum) && (leftSum >= rightSum)) (leftLow, leftHigh, leftSum)
+      else if ((crossSum > leftSum) && (crossSum >= rightSum)) (crossLow, crossHigh, crossSum)
       else (rightLow, rightHigh, rightSum)
     }
   }

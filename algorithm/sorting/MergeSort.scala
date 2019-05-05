@@ -1,5 +1,9 @@
 package algorithm.sorting
 import scala.util.Random
+/*
+Time O(nlogn)
+Space O(n)
+ */
 object MergeSort extends App {
   val list = List.fill(7)(Random.nextInt(20))
   println(list)
