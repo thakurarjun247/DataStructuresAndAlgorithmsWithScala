@@ -1,5 +1,6 @@
 package algorithm.devideandconquer
 /*
+//refer https://www.youtube.com/watch?v=lPUhHmgrpik for master theorem
 O(nLog(n))
 space not sure, should be O(n) as mergesort is O(n) space for sure
  */

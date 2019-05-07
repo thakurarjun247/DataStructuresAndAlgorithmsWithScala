@@ -6,6 +6,13 @@ import scala.collection.immutable.ListMap
 //i.e. Zeba beats Alice
 object Two
   extends App {
+  val mutMap=scala.collection.mutable.Map[Int, Int]()
+  mutMap += 2->4
+  mutMap += 3->9
+  mutMap += 2->8
+  println(mutMap.getOrElse(2, "notfound"))
+
+
   val list = Array("Alice",
     "Allison",
     "Alice",

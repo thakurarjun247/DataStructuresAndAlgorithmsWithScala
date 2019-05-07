@@ -12,6 +12,11 @@ class DirectedGraph[V](adjList: Map[V, List[V]]) extends Graph[V] {
     val aNeighbours = b +: neighbours(a)
     //dont update create new
     new DirectedGraph(adjList + (a -> aNeighbours))
+    //optimize
+    /*
+    Had it been mut map just do something like
+    mutMap += a -> aNeighbours
+    */
   }
   override def neighbours(v: V): List[V] = adjList.getOrElse(v, Nil)
 }
