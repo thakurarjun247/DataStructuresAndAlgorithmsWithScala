@@ -101,6 +101,16 @@ object LinkedList extends App {
       traverseNew(node.next)
     }
   }
+
+  def mergeSortedLL(x:Node, y:Node, z:Node):Node={
+   // var z:Node=null
+    if(x==null) y
+    else if(y==null) x
+    else {
+      //if(x.key>y.key)
+      null
+    }
+  }
 }
 
 

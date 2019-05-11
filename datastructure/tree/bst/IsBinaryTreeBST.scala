@@ -1,4 +1,5 @@
 package datastructure.tree.bst
+//tags microsoft amazon
 import datastructure.tree.create.{CreateTree, Node}
 import datastructure.tree.traversal.TraverseTree._
 object IsBinaryTreeBST extends App {
