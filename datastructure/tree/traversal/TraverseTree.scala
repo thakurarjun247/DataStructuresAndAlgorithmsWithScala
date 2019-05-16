@@ -1,6 +1,5 @@
 package datastructure.tree.traversal
 import datastructure.tree.create.Node
-
 import scala.collection.mutable
 object TraverseTree extends App {
   def levelOrder(root: Node) =
@@ -105,6 +104,7 @@ object TraverseTree extends App {
     val buffer = mutable.ListBuffer[Node]()
     if (root != null) {
       val q = mutable.Queue[Node]()
+      //root's level is already set by default to 0
       q.enqueue(root)
       while (q.size != 0) {
         val node = q.dequeue()
@@ -127,5 +127,52 @@ object TraverseTree extends App {
           level._2.foreach(print)
         })
     }
+  }
+  def connectSameLevelNodes(root: Node) = {
+    val firstNodeOfLevel = mutable.Queue[Node]()
+    if (root != null) {
+      val q = mutable.Queue[Node]()
+      //root's level is already set by default to 0
+      q.enqueue(root)
+      var prevNode: Node = new Node(key = 0, level = -1)
+      while (q.size != 0) {
+        val node = q.dequeue()
+        if (node.level == prevNode.level) {
+          prevNode.sibling = node
+          prevNode = node
+        }
+        else {
+          prevNode = node
+          firstNodeOfLevel += node
+        }
+        if (node.left != null) {
+          node.left.level = node.level + 1
+          q.enqueue(node.left)
+        }
+        if (node.right != null) {
+          node.right.level = node.level + 1
+          q.enqueue(node.right)
+        }
+      }
+      while (firstNodeOfLevel.nonEmpty) {
+        var node = firstNodeOfLevel.dequeue()
+        println("\n---------------------------------------------------")
+        while (node != null) {
+          print(s"${node.key} -> ")
+          node = node.sibling
+        }
+      }
+    }
+  }
+
+  def printNodeAtDistanceKFromRoot(root: Node, k: Int, currNodeDistFromRoot: Int): Unit = {
+    if (root != null && currNodeDistFromRoot<=k) {
+      if (currNodeDistFromRoot == k) print(" "+root.key)
+      else {
+        printNodeAtDistanceKFromRoot(root.left, k , currNodeDistFromRoot+1)
+        printNodeAtDistanceKFromRoot(root.right, k , currNodeDistFromRoot+1)
+      }
+    }
+
   }
 }

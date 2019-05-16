@@ -4,7 +4,8 @@ class Node(var key: Int,
            var right: Node = null,
            var hd: Int = 0,
            var level: Int = 0,
-           var parent: Node = null) {
+           var parent: Node = null,
+           var sibling: Node = null) {
   override def toString = getTabs(level) + s"($key)"
   def getTabs(level: Int): String =
     level match {

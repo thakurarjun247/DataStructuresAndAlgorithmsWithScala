@@ -1,27 +1,29 @@
 package datastructure.linkedlist
 import scala.collection.mutable
 import scala.io.StdIn.readInt
-class Node(var key: Int, var next: Node = null) {
+ class Node(var key: Int, var next: Node = null) {
   def nextNode = if (next == null) "null" else next.key.toString
   override def toString = s"$key ->($nextNode)"
 }
-object LinkedList extends App {
+object LinkedList {
+  def main(args: Array[String]): Unit = {
+   /* val headStart = createLLFromArray()
+    traverseNew(headStart)*/
+    //createUsingUserInput()
+    createUsingGivenArray(1 to 10 toArray)
+    traverse(start)
+    // println("start is " + start.key)
+    // traverseNew(start.next)
+    // reverse(start)
+    //reverseNew(start)
+    /* println("what index to delete?")
+    val deleteAt=readInt()
+    val index=delete(start, deleteAt)
+    println(s"found at ${index.getOrElse("not found")}")*/
+    //traverse(start)
+  }
   val set = mutable.Set[Int]()
-  println(set.add(1))
-  println(set.add(1))
   var start = new Node(0)
-  //createUsingUserInput()
-  createUsingGivenArray(Array(1, 2, 3, 4))
-  traverse(start)
-  println("start is " + start.key)
-  traverseNew(start.next)
-  // reverse(start)
-  reverseNew(start)
-  /* println("what index to delete?")
-  val deleteAt=readInt()
-  val index=delete(start, deleteAt)
-  println(s"found at ${index.getOrElse("not found")}")*/
-  //traverse(start)
   def createUsingUserInput() = {
     print("enter length of LL: ")
     val len = readInt
@@ -101,15 +103,29 @@ object LinkedList extends App {
       traverseNew(node.next)
     }
   }
-
-  def mergeSortedLL(x:Node, y:Node, z:Node):Node={
-   // var z:Node=null
-    if(x==null) y
-    else if(y==null) x
+  def mergeSortedLL(x: Node, y: Node, z: Node): Node = {
+    // var z:Node=null
+    if (x == null) y
+    else if (y == null) x
     else {
       //if(x.key>y.key)
       null
     }
+  }
+  /*def createLLFromArray(a: Array[Int] = 1 to 10 toArray): Node = {
+    require(a.size > 0)
+     var temp:Node=null
+
+    var h = new Node(0,temp)
+
+    for (i <- a.indices) {
+     var temp = new Node(a(i))
+     temp=temp.next
+    }
+    h
+  }*/
+  def reverseLLinGroupOfGivenSize(start: Node, n: Int) = {
+
   }
 }
 
