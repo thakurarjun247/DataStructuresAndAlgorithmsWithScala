@@ -1,6 +1,7 @@
 package dsalgo.algorithm.dynamicprogramming
 
 import scala.collection.mutable.Map
+
 /*
 Given a rod of length n inches and an array of prices that contains
 prices of all pieces of size smaller than n.
@@ -43,6 +44,7 @@ object RodCuttingNew extends App {
       else fNoMemo(l.tail, p.tail, len) max p.head + fNoMemo(l, p, len - l.head)
     }
   }
+
   /*optimize: Just use an array for memo, where array length = len+1
  optimize:  a(0)=0 intialize the array with MIN_VALUE*/
   def fMemo(l: Array[Int], p: Array[Int], len: Int, memo: Map[(Int, Int), Int]): Int = {
@@ -60,10 +62,12 @@ object RodCuttingNew extends App {
       memo(l.length, len)
     }
   }
+
   def fMemoNew(l: Array[Int], p: Array[Int], len: Int): Int = {
     val memo = Array.fill(len + 1)(Integer.MIN_VALUE)
     fMemoNew(l, p, len, memo)
   }
+
   def fMemoNew(l: Array[Int], p: Array[Int], len: Int, memo: Array[Int]): Int = {
     if (len == 0 || l.isEmpty || p.isEmpty) 0
     else {

@@ -3,7 +3,8 @@ import dsalgo.datastructure.tree.create.Node
 import scala.collection.mutable.ListBuffer
 object PathSum extends App {
   var paths = ListBuffer[ListBuffer[Node]]()
-  val root=datastructure.tree.create.CreateTree.createBinaryTree()
+  val root=dsalgo.datastructure.tree.create.CreateTree.createBinaryTree()
+  print("SGN")
   kSumPaths(root, 5, ListBuffer[Node]())
 /*  paths
     .foreach(list=> {
